@@ -9,10 +9,21 @@ class ToDoList extends React.Component {
 		render() {
 			return(
 				<div> 
-					
-					{this.state.todos.map( todo => <ToDoItem data = {todo}/> )}
-
+               		<section className="todoapp">
+						<header className="header">
+							<h1>todos</h1>
+						<input className="new-todo" placeholder="What needs to be done?" autoFocus/>
+						</header>
+					{this.state.todos.map( todo => <ToDoItem key = {todo.id} data = {todo}/> )}
+					<footer className="footer">
+			
+					<span className="todo-count"><strong>0</strong> item(s) left</span>
+		
+					<button className="clear-completed">Clear completed</button>
+					</footer>
+					</section>
 				</div>
+				
 			);
 		}
 }
